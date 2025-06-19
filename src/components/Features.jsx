@@ -1,68 +1,11 @@
 import { useState, useEffect } from "react";
-import {
-  Zap,
-  Users,
-  Star,
-  Shield,
-  Code,
-  Rocket,
-  Globe,
-  Lock,
-} from "lucide-react";
+import { Star } from "lucide-react";
+import { features } from "../data/features";
+import { useNavigate } from "react-router-dom";
 
 export function Features() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  const features = [
-    {
-      icon: <Zap className="h-8 w-8 text-blue-600" />,
-      title: "Lightning Fast",
-      description:
-        "Built for speed and performance with modern technologies like Vite and React.",
-    },
-    {
-      icon: <Users className="h-8 w-8 text-green-600" />,
-      title: "Team Collaboration",
-      description:
-        "Work together seamlessly with real-time collaboration tools and shared workspaces.",
-    },
-    {
-      icon: <Star className="h-8 w-8 text-yellow-600" />,
-      title: "Premium Quality",
-      description:
-        "Enterprise-grade security and reliability you can trust for production applications.",
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-purple-600" />,
-      title: "Secure by Default",
-      description:
-        "Built-in security features and best practices to keep your applications safe.",
-    },
-    {
-      icon: <Code className="h-8 w-8 text-indigo-600" />,
-      title: "Developer Friendly",
-      description:
-        "Intuitive APIs and comprehensive documentation to get you started quickly.",
-    },
-    {
-      icon: <Rocket className="h-8 w-8 text-red-600" />,
-      title: "Deploy Anywhere",
-      description:
-        "Deploy to any platform with our flexible build system and deployment options.",
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-cyan-600" />,
-      title: "Global CDN",
-      description:
-        "Lightning-fast content delivery with our worldwide network of edge servers.",
-    },
-    {
-      icon: <Lock className="h-8 w-8 text-pink-600" />,
-      title: "Privacy First",
-      description:
-        "Your data stays private with end-to-end encryption and zero tracking.",
-    },
-  ];
+  const navigate = useNavigate();
 
   const testimonials = [
     {
@@ -100,7 +43,7 @@ export function Features() {
     <>
       {/* Features Section */}
       <section id="features" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="mb-6">
               <span className="inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
@@ -117,7 +60,7 @@ export function Features() {
           </div>
 
           {/* Features Grid - 4 columns */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -140,11 +83,11 @@ export function Features() {
 
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="mb-6">
-              <span className="inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
-                💯 Users Love Us
+              <span className="inline-block bg-blue-50 text-accent px-4 py-2 rounded-full text-sm font-semibold">
+                💘 Where we believe
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -243,10 +186,16 @@ export function Features() {
             applications with ViteLand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button
+              onClick={() => navigate("/pricing")}
+              className="bg-white cursor-pointer text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
               Start Free Trial
             </button>
-            <button className="border-2 border-gray-400 text-gray-300 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300">
+            <button
+              onClick={() => navigate("/pricing")}
+              className="border-2 cursor-pointer border-gray-400 text-gray-300 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300"
+            >
               View Pricing
             </button>
           </div>

@@ -8,6 +8,7 @@ import PricingPage from "./pages/Pricing";
 import NotFoundPage from "./pages/Nothing";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+      <ScrollToTop />
       <Footer />
     </div>
   );

@@ -1,33 +1,7 @@
 import { Users, Target, Award, Heart } from "lucide-react";
+import { team } from "../data/team";
 
 export default function AboutPage() {
-  const team = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      bio: "Former tech lead at major companies, passionate about developer experience.",
-      avatar: "👩‍💼",
-    },
-    {
-      name: "Mike Chen",
-      role: "CTO",
-      bio: "Full-stack engineer with 10+ years building scalable web applications.",
-      avatar: "👨‍💻",
-    },
-    {
-      name: "Emily Davis",
-      role: "Head of Design",
-      bio: "UX/UI designer focused on creating beautiful, intuitive user experiences.",
-      avatar: "👩‍🎨",
-    },
-    {
-      name: "Alex Rodriguez",
-      role: "Lead Developer",
-      bio: "Open source contributor and advocate for modern web technologies.",
-      avatar: "👨‍🔧",
-    },
-  ];
-
   const values = [
     {
       icon: <Users className="h-8 w-8 text-blue-600" />,
@@ -66,7 +40,7 @@ export default function AboutPage() {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Building the Future of
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -84,7 +58,7 @@ export default function AboutPage() {
 
       {/* Stats Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="p-6">
@@ -100,7 +74,7 @@ export default function AboutPage() {
 
       {/* Story Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
           </div>
@@ -130,7 +104,7 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Our Values
@@ -157,14 +131,14 @@ export default function AboutPage() {
 
       {/* Team Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600">The people behind ViteLand</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {team.map((member, index) => (
               <div
                 key={index}
@@ -186,7 +160,7 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Join Our Journey
           </h2>

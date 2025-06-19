@@ -8,6 +8,7 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
+import { contactInfo, budgetOptions, faqs } from "../data/contact";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -44,69 +45,6 @@ export default function ContactPage() {
     }, 1000);
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail className="h-6 w-6 text-blue-600" />,
-      title: "Email Us",
-      details: "hello@viteland.com",
-      description: "Send us an email and we'll respond within 24 hours",
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-green-600" />,
-      title: "Call Us",
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri from 8am to 6pm PST",
-    },
-    {
-      icon: <MapPin className="h-6 w-6 text-purple-600" />,
-      title: "Visit Us",
-      details: "San Francisco, CA",
-      description: "123 Tech Street, Suite 100",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "How do I get started with ViteLand?",
-      answer:
-        "Getting started is simple! Sign up for a free account, choose your plan, and you can start building immediately. Our onboarding process will guide you through setting up your first project, and our documentation provides step-by-step tutorials for common use cases.",
-    },
-    {
-      question: "What kind of support do you offer?",
-      answer:
-        "We offer comprehensive support including 24/7 email support for all users, priority support for Pro users, and dedicated phone support for Enterprise customers. We also provide extensive documentation, video tutorials, community forums, and regular webinars.",
-    },
-    {
-      question: "Can I use ViteLand for commercial projects?",
-      answer:
-        "ViteLand is designed for both personal and commercial use. Our Pro and Enterprise plans include commercial licenses, advanced features, and priority support. You can build and deploy unlimited commercial projects with full ownership of your code.",
-    },
-    {
-      question: "Do you offer custom enterprise solutions?",
-      answer:
-        "Yes, we provide custom enterprise solutions including on-premise deployments, custom integrations, dedicated infrastructure, SSO authentication, advanced security features, and dedicated account management. Contact our sales team to discuss your specific requirements.",
-    },
-    {
-      question: "What's included in the free plan?",
-      answer:
-        "Our free plan includes up to 3 projects, 5GB storage, community support, basic templates, SSL certificates, and access to our core development tools. It's perfect for personal projects, learning, and small-scale applications.",
-    },
-    {
-      question: "How secure is my data on ViteLand?",
-      answer:
-        "Security is our top priority. We use enterprise-grade encryption, regular security audits, SOC 2 compliance, automatic backups, and follow industry best practices. Your code and data are protected with multiple layers of security and are never shared with third parties.",
-    },
-  ];
-
-  const budgetOptions = [
-    "Under $5,000",
-    "$5,000 - $15,000",
-    "$15,000 - $50,000",
-    "$50,000 - $100,000",
-    "Over $100,000",
-    "Not sure yet",
-  ];
-
   return (
     <div className="pt-20 bg-gray-50">
       {/* Hero Section */}
@@ -128,7 +66,7 @@ export default function ContactPage() {
 
       {/* Contact Info */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {contactInfo.map((info, index) => (
               <div
@@ -151,7 +89,7 @@ export default function ContactPage() {
 
       {/* Enhanced Contact Form */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200">
             <div className="grid lg:grid-cols-5 gap-0">
               {/* Form */}
@@ -370,14 +308,27 @@ export default function ContactPage() {
                   <p className="text-sm text-gray-600 mb-4 text-start">
                     Trusted by 10,000+ developers worldwide
                   </p>
-                  <div className="flex space-x-2 items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <div
+                  <div className="flex items-center">
+                    {[
+                      "https://randomuser.me/api/portraits/men/32.jpg",
+                      "https://randomuser.me/api/portraits/women/44.jpg",
+                      "https://randomuser.me/api/portraits/men/65.jpg",
+                      "https://randomuser.me/api/portraits/women/68.jpg",
+                      "https://randomuser.me/api/portraits/men/12.jpg",
+                      "https://randomuser.me/api/portraits/men/40.jpg",
+                      "https://randomuser.me/api/portraits/women/45.jpg",
+                      "https://randomuser.me/api/portraits/men/68.jpg",
+                    ].map((src, i) => (
+                      <img
                         key={i}
-                        className="w-8 h-8 bg-gray-300 rounded-full"
-                      ></div>
+                        src={src}
+                        alt="User avatar"
+                        className={`w-8 h-8 rounded-full object-cover border-2 border-white shadow -ml-2 first:ml-0`}
+                        style={{ zIndex: 10 - i }}
+                      />
                     ))}
-                    <span className="text-sm text-gray-600 ml-2">
+
+                    <span className="text-sm text-gray-600 ml-4">
                       +10k more
                     </span>
                   </div>
@@ -390,7 +341,7 @@ export default function ContactPage() {
 
       {/* Enhanced FAQ Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
@@ -421,7 +372,7 @@ export default function ContactPage() {
                 </button>
                 {openFaq === index && (
                   <div className="px-6 py-4 bg-white border-t border-gray-200">
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed text-start">
                       {faq.answer}
                     </p>
                   </div>
